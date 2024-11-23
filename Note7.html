@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Note 7 Search</title>
+    <script async src="https://cse.google.com/cse.js?cx=e409220a02b25402d"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            transition: transform 0.5s, background-color 0.5s;
+        }
+        #dangerMode {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #searchForm {
+            margin-top: 50px;
+        }
+        #logo {
+            width: 200px;
+            height: auto;
+            margin: 20px auto;
+        }
+        .gcse-search {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button id="dangerMode">Danger Mode</button>
+    <div id="searchForm">
+        <!-- Logo -->
+        <img id="logo" src="https://i.imgur.com/Y6FOLjm.jpg" alt="Galaxy Note 7 Logo">
+        <h1>Galaxy Note 7 Search</h1>
+        <!-- Embed the Google Custom Search Engine -->
+        <div class="gcse-search"></div>
+    </div>
+
+    <script>
+        let isDangerMode = false; // Track if Danger Mode is active
+
+        document.getElementById('dangerMode').onclick = function() {
+            if (!isDangerMode) {
+                // Activate Danger Mode
+                document.body.style.transform = 'rotate(180deg)';
+                document.body.style.backgroundColor = 'yellow';
+                this.textContent = 'Normal Mode'; // Update button text
+            } else {
+                // Deactivate Danger Mode
+                document.body.style.transform = 'rotate(0deg)';
+                document.body.style.backgroundColor = 'white';
+                this.textContent = 'Danger Mode'; // Update button text
+            }
+            isDangerMode = !isDangerMode; // Toggle state
+        };
+    </script>
+</body>
+</html>
